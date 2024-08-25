@@ -1,7 +1,7 @@
 {
   "name": "next-app-router-progress-bar",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.5.0",
   "description": "A lightweight detector for progress-bar in Next.js App Router",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
@@ -13,13 +13,28 @@
     "url": "git+https://github.com/dskiba/next-app-router-progress-bar.git"
   },
   "bugs": "https://github.com/dskiba/next-app-router-progress-bar/issues",
-  "keywords": [],
+  "keywords": [
+    "next.js",
+    "next",
+    "progress-bar",
+    "app-router"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./link": {
+      "types": "./dist/next/link.d.ts",
+      "import": "./dist/next/link.mjs",
+      "require": "./dist/next/link.cjs"
+    },
+    "./progress-bar": {
+      "types": "./dist/progress-bar/progress-bar.d.ts",
+      "import": "./dist/progress-bar/progress-bar.mjs",
+      "require": "./dist/progress-bar/progress-bar.cjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -64,6 +79,8 @@
     "next": "^14.2.6",
     "pnpm": "^9.5.0",
     "react": "^18.3.1",
+    "rollup-plugin-preserve-directives": "^0.4.0",
+    "rollup-preserve-directives": "^1.1.1",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0",

@@ -44,7 +44,7 @@ function defaultUpdateProgress(currentProgress: number, easingFunction = easeOut
   }
 
   const remainingProgress = maxProgress - currentProgress
-  const increment = Math.min(remainingProgress, 0.12)
+  const increment = Math.min(remainingProgress, 0.1)
   const t = increment / remainingProgress
   const easedIncrement = easingFunction(t) * increment
   const newProgress = currentProgress + easedIncrement
