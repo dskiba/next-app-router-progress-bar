@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import { usePBProgress } from '../index'
-// import s from './progress-bar.module.css'
 
 export function ProgressBar(): React.ReactElement {
   const { progress, isLoading } = usePBProgress()
@@ -16,7 +15,7 @@ export function ProgressBar(): React.ReactElement {
         left: 0,
         zIndex: 9999,
         overflow: 'hidden',
-        backgroundColor: '#bd1622',
+        backgroundColor: '#FF91A4',
         transition: 'width 200ms ease-in-out',
         visibility: isLoading ? 'visible' : 'hidden',
       }}
