@@ -5,5 +5,6 @@ export default antfu(
   {
     type: 'lib',
     jest: true,
+    ignores: ['./website/*/**.tsx', 'README.md', '.gitignore'],
   },
 )

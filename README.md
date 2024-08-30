@@ -6,26 +6,47 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-A lightweight progress-bar detector for Next.js with App Router with zero dependencies.
+A lightweight, zero-dependency solution for displaying redirect progress for **Next.js with App Router**.  
+This library provides an easy way to add loading indicators for route transitions, optimized for performance with minimal bundle size.
 
-Optimized for performance (no unnecessary re-renders) and minimal bundle size.
+## Features
 
-Included optioned progress bar and easing function.
+- 🚀 Lightweight and zero dependencies
+- ⚡ Optimized for performance with no unnecessary re-renders
+- 📦 Minimal bundle size
+- 🎨 Customizable progress bar
+- 🔧 Easy integration with Next.js App Router
+- 🧩 Includes a custom Link component for seamless navigation
+- 🔧 Includes a custom ProgressBar and usePBProgress hook for creating custom progress indicators
 
 ## Demo
 
-https://next-app-router-progress-bar.vercel.app/
+Check out the live demo: [https://next-app-router-progress-bar.vercel.app/](https://next-app-router-progress-bar.vercel.app/)
+
+## Installation
+
+```bash
+npm install next-app-router-progress-bar
+# or
+yarn add next-app-router-progress-bar
+# or
+pnpm add next-app-router-progress-bar
+```
 
 ## Usage
-Add `PBProvider` to the root layout of your app.
+
+### 1. Add PBProvider to your root layout
+
+In your root layout file (e.g., `app/layout.tsx`), wrap your application with the `PBProvider`:
+
 ```tsx
 import { PBProvider } from 'next-app-router-progress-bar'
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>): React.ReactElement {
+}) {
   return (
     <html lang="en">
       <body>
@@ -38,18 +59,21 @@ export default function RootLayout({
 }
 ```
 
-Add optioned Progress Bar to your layout.
+### 2. Add the ProgressBar component
+
+Add the `ProgressBar` component to your layout where you want the progress bar to appear:
+
 ```tsx
 import { ProgressBar } from 'next-app-router-progress-bar/progress-bar'
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>): React.ReactElement {
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen`}>
+      <body>
         <PBProvider>
           <ProgressBar />
           {children}
@@ -59,20 +83,34 @@ export default function RootLayout({
   )
 }
 ```
-Use wrapped Next.js `Link` component to navigate between pages.
+
+### 3. Use the Link component for navigation
+
+Replace the Next.js `Link` component with the one provided by this library:
+
 ```tsx
 import { Link } from 'next-app-router-progress-bar/link'
 
-// ...
-<Link href="/profile">Go to Home</Link>
-// ...
+export default function Navigation() {
+  return (
+    <nav>
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+    </nav>
+  )
+}
 ```
 
-You can add Custom Progress Bar with `usePBProgress` hook.
-```tsx
-import { usePBProgress } from '../index'
+## Customization
 
-export function CustomProgressBar(): React.ReactElement {
+### Custom Progress Bar
+
+You can create a custom progress bar using the `usePBProgress` hook:
+
+```tsx
+import { usePBProgress } from 'next-app-router-progress-bar'
+
+export function CustomProgressBar() {
   const { progress, isLoading } = usePBProgress()
   return (
     <div
@@ -82,9 +120,7 @@ export function CustomProgressBar(): React.ReactElement {
         left: 0,
         width: `${progress * 100}%`,
         height: '4px',
-        zIndex: 99,
-        overflow: 'hidden',
-        backgroundColor: 'hotpink',
+        backgroundColor: 'blue',
         transition: 'width 200ms ease-in-out',
         visibility: isLoading ? 'visible' : 'hidden',
       }}
@@ -93,7 +129,46 @@ export function CustomProgressBar(): React.ReactElement {
 }
 ```
 
-Based on the [the article on Build UI](https://buildui.com/posts/global-progress-in-nextjs) by Sam Selikoff and Ryan Toronto
+### Customizing PBProvider
+
+The `PBProvider` component accepts the following props:
+
+- `updateProgress`: A function to customize how the progress is updated. Default is an easing function.
+- `timeout`: The interval (in milliseconds) at which the progress is updated. Default is 200ms.
+
+Example:
+
+```tsx
+<PBProvider
+  updateProgress={(progress) => Math.min(progress + 0.1, 0.95)}
+  timeout={100}
+>
+  {children}
+</PBProvider>
+```
+
+## API Reference
+
+### PBProvider
+
+The main provider component that manages the progress state.
+
+### ProgressBar
+
+A pre-styled progress bar component.
+
+### Link
+
+A wrapper around Next.js's Link component that triggers the progress bar.
+
+### Hooks
+
+- `usePBProgress`: Returns `{ progress, isLoading }` for creating custom progress indicators.
+- `usePBTransition`: Returns `{ start, stop }` for manually controlling the progress bar.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
