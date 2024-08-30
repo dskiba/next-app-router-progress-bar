@@ -58,7 +58,7 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "start": "esno src/index.tsx",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests\n",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
