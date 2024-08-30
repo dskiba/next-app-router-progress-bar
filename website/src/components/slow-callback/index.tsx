@@ -20,7 +20,6 @@ export function SlowCallback() {
         className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium p-2 bg-gray-100 text-gray-800"
         onClick={() => {
           start()
-          // @ts-expect-error typings
           startTransition(async () => {
             // Introduces artificial slowdown
             await new Promise(resolve => setTimeout(resolve, delay))
