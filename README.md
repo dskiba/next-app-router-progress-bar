@@ -170,6 +170,11 @@ A wrapper around Next.js's Link component that triggers the progress bar.
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## Credits
+
+This package is an enhanced version of the demo by [Sam and Ryan's article on Build UI](https://buildui.com/posts/global-progress-in-nextjs).  
+It utilizes React's `useOptimistic` to monitor React Transitions.
+
 ## License
 
 [MIT](./LICENSE) License © 2024-PRESENT
