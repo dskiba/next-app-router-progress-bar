@@ -72,8 +72,8 @@ importers:
         specifier: 14.2.6
         version: 14.2.6(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-app-router-progress-bar:
-        specifier: link:../
-        version: link:..
+        specifier: 0.0.2
+        version: 0.0.2(next@14.2.6(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18
         version: 18.3.1
@@ -2300,6 +2300,12 @@ packages:
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  next-app-router-progress-bar@0.0.2:
+    resolution: {integrity: sha512-zs616X57zHaEqkgr+a28W39nxZLXH4f5wwSPg14lgRJ16ruz5Tbwjs20dQIJq+YefAq5CEBirckTFFs4Myh9Kw==}
+    peerDependencies:
+      next: '*'
+      react: '*'
 
   next@14.2.6:
     resolution: {integrity: sha512-57Su7RqXs5CBKKKOagt8gPhMM3CpjgbeQhrtei2KLAA1vTNm7jfKS+uDARkSW8ZETUflDCBIsUKGSyQdRs4U4g==}
@@ -5475,6 +5481,11 @@ snapshots:
   natural-compare-lite@1.4.0: {}
 
   natural-compare@1.4.0: {}
+
+  next-app-router-progress-bar@0.0.2(next@14.2.6(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+    dependencies:
+      next: 14.2.6(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
 
   next@14.2.6(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
