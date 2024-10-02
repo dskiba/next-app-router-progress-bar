@@ -35,10 +35,10 @@ export function Link({
     <NextLink
       href={href}
       onClick={(e) => {
-        e.preventDefault()
         if (isModifiedEvent(e)) {
           return
         }
+        e.preventDefault()
         start()
         startTransition(() => {
           if (replace) {

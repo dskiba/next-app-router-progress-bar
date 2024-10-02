@@ -31,6 +31,8 @@ npm install next-app-router-progress-bar
 yarn add next-app-router-progress-bar
 # or
 pnpm add next-app-router-progress-bar
+# or
+bun add next-app-router-progress-bar
 ```
 
 ## Usage
@@ -147,6 +149,29 @@ Example:
 </PBProvider>
 ```
 
+### Custom router handler
+use `startTransition` from React
+```tsx
+import { startTransition } from 'react'
+
+function Component() {
+  const { start, stop } = usePBTransition()
+  const router = useRouter()
+  return (
+    <button
+      onClick={() => {
+        start()
+        startTransition(() => {
+          router.push('/new-page')
+          stop()
+        })
+      }}>
+      go to new page
+    </button>
+  )
+}
+```
+
 ## API Reference
 
 ### PBProvider
@@ -169,6 +194,17 @@ A wrapper around Next.js's Link component that triggers the progress bar.
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+Development process
+```bash
+# install dependencies
+pnpm install
+# build library
+pnpm build
+# run webstite
+cd website
+# link local to package.json
+pnpm i && pnpm dev
+```
 
 ## Credits
 
