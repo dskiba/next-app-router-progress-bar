@@ -1,7 +1,7 @@
 {
   "name": "next-app-router-progress-bar",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@9.5.0",
   "description": "A lightweight detector for progress-bar in Next.js App Router",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
