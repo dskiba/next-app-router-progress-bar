@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "next": "14.2.6",
-    "next-app-router-progress-bar": "^0.0.1",
+    "next-app-router-progress-bar": "link:../",
     "react": "^18",
     "react-dom": "^18"
   },
