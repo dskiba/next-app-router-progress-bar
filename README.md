@@ -202,6 +202,7 @@ pnpm install
 pnpm build
 # run webstite
 cd website
+# link local to package.json
 pnpm i && pnpm dev
 ```
 
