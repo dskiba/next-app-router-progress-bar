@@ -11,7 +11,7 @@ This library provides an easy way to add loading indicators for route transition
 
 ## Features
 
-- 🚀 Lightweight and zero dependencies
+- 🚀 Lightweight and zero dependencies (770b)
 - ⚡ Optimized for performance with no unnecessary re-renders
 - 📦 Minimal bundle size
 - 🎨 Customizable progress bar
