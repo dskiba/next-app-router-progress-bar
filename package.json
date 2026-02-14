@@ -76,7 +76,7 @@
     "eslint": "^9.7.0",
     "esno": "^4.7.0",
     "lint-staged": "^15.2.7",
-    "next": "^14.2.6",
+    "next": "14.2.35",
     "pnpm": "^9.5.0",
     "react": "^18.3.1",
     "rollup-plugin-preserve-directives": "^0.4.0",
